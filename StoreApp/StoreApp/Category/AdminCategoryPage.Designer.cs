@@ -42,6 +42,7 @@
 			this.grpDeleteCategory = new System.Windows.Forms.GroupBox();
 			this.lblSelectedId = new System.Windows.Forms.Label();
 			this.btnDeleteCategory = new System.Windows.Forms.Button();
+			this.btnMainPage = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
 			this.grpAddCategory.SuspendLayout();
 			this.grpUpdateCategory.SuspendLayout();
@@ -54,7 +55,7 @@
 			this.dgvCategory.Location = new System.Drawing.Point(279, 12);
 			this.dgvCategory.Name = "dgvCategory";
 			this.dgvCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvCategory.Size = new System.Drawing.Size(363, 325);
+			this.dgvCategory.Size = new System.Drawing.Size(363, 300);
 			this.dgvCategory.TabIndex = 0;
 			this.dgvCategory.SelectionChanged += new System.EventHandler(this.dgvCategory_SelectionChanged);
 			// 
@@ -173,12 +174,24 @@
 			this.btnDeleteCategory.UseVisualStyleBackColor = false;
 			this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
 			// 
+			// btnMainPage
+			// 
+			this.btnMainPage.BackColor = System.Drawing.SystemColors.Control;
+			this.btnMainPage.Location = new System.Drawing.Point(279, 318);
+			this.btnMainPage.Name = "btnMainPage";
+			this.btnMainPage.Size = new System.Drawing.Size(363, 23);
+			this.btnMainPage.TabIndex = 5;
+			this.btnMainPage.Text = "Ana Sayfa";
+			this.btnMainPage.UseVisualStyleBackColor = false;
+			this.btnMainPage.Click += new System.EventHandler(this.btnMainPage_Click);
+			// 
 			// AdminCategoryPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.GrayText;
 			this.ClientSize = new System.Drawing.Size(654, 349);
+			this.Controls.Add(this.btnMainPage);
 			this.Controls.Add(this.grpDeleteCategory);
 			this.Controls.Add(this.grpUpdateCategory);
 			this.Controls.Add(this.grpAddCategory);
@@ -215,5 +228,6 @@
 		private System.Windows.Forms.Label lblCategoryNameUpdate;
 		private System.Windows.Forms.TextBox txtUpdateCategoryName;
 		private System.Windows.Forms.Label lblSelectedId;
+		private System.Windows.Forms.Button btnMainPage;
 	}
 }

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using StoreApp.DataAccess;
+using StoreApp.Category;
+using AForge.Video.DirectShow;
+using ZXing;
 
 namespace StoreApp.Product
 {
@@ -75,6 +78,16 @@ namespace StoreApp.Product
 		{
 			LoadProducts();
 			LoadCategories();   // LoadCategoriesNew();
+
+			devices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+
+			// FilterInfo görüntü yakalama cihazları hakkında bilgi tutar
+			foreach (FilterInfo device in devices)
+			{
+				cmbCamera.Items.Add(device.Name);
+			}
+
+			cmbCamera.SelectedIndex = 0;
 		}
 
 		private void btnAddProduct_Click(object sender, EventArgs e)
@@ -133,20 +146,24 @@ namespace StoreApp.Product
 
 		private void dgvProduct_SelectionChanged(object sender, EventArgs e)
 		{
-			selectedId = dgvProduct.CurrentRow.Cells["ProductId"].Value.ToString();
-			lblSelectedId.Text = selectedId;
+			if (dgvProduct.CurrentRow == null) { }
+			else
+			{
+				selectedId = dgvProduct.CurrentRow.Cells["ProductId"].Value.ToString();
+				lblSelectedId.Text = selectedId;
 
-			selectedName = dgvProduct.CurrentRow.Cells["ProductName"].Value.ToString();
-			txtUpdateProductName.Text = selectedName;
+				selectedName = dgvProduct.CurrentRow.Cells["ProductName"].Value.ToString();
+				txtUpdateProductName.Text = selectedName;
 
-			selectedPrice = dgvProduct.CurrentRow.Cells["Price"].Value.ToString();
-			txtUpdatePrice.Text = selectedPrice;
+				selectedPrice = dgvProduct.CurrentRow.Cells["Price"].Value.ToString();
+				txtUpdatePrice.Text = selectedPrice;
 
-			selectedBarcode = dgvProduct.CurrentRow.Cells["ProductBarcode"].Value.ToString();
-			txtUpdateBarcode.Text = selectedBarcode;
+				selectedBarcode = dgvProduct.CurrentRow.Cells["ProductBarcode"].Value.ToString();
+				txtUpdateBarcode.Text = selectedBarcode;
 
-			selectedCategory = dgvProduct.CurrentRow.Cells["CategoryName"].Value.ToString();
-			cmbUpdateCategoryName.Text = selectedCategory;
+				selectedCategory = dgvProduct.CurrentRow.Cells["CategoryName"].Value.ToString();
+				cmbUpdateCategoryName.Text = selectedCategory;
+			}
 		}
 
 		public void IncreaseCategory()
@@ -165,6 +182,73 @@ namespace StoreApp.Product
 
 			commandIncreaseCategory.Parameters.AddWithValue("@pid", Convert.ToInt32(cmbCategoryName.SelectedValue));
 			commandIncreaseCategory.ExecuteNonQuery();
+		}
+
+		private void btnMainPage_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+
+			StoreApp storeAppPage = new StoreApp();
+			storeAppPage.Show();
+		}
+
+		FilterInfoCollection devices;
+		VideoCaptureDevice camera;
+
+		private void btnStartCamera_Click(object sender, EventArgs e)
+		{
+			camera = new VideoCaptureDevice(devices[cmbCamera.SelectedIndex].MonikerString);
+
+			camera.NewFrame += VideoCaptureDevice_NewFrame;
+			camera.Start();
+		}
+
+		private void VideoCaptureDevice_NewFrame(object sender, AForge.Video.NewFrameEventArgs eventArgs)
+		{
+			Bitmap readBarcode = (Bitmap)eventArgs.Frame.Clone();
+			BarcodeReader reader = new BarcodeReader();
+
+			var result = reader.Decode(readBarcode);
+
+			if (result != null)
+			{
+				txtBarcode.Invoke(new MethodInvoker(delegate ()
+				{
+					txtBarcode.Text = result.ToString();
+				}));
+			}
+
+			if (result != null)
+			{
+				txtBarcodeResult.Invoke(new MethodInvoker(delegate ()
+				{
+					txtBarcodeResult.Text = result.ToString();
+				}));
+			}
+
+			pcbCamera.Image = readBarcode;
+		}
+
+		private void btnStopCamera_Click(object sender, EventArgs e)
+		{
+			if (camera != null)
+			{
+				if (camera.IsRunning)
+				{
+					camera.Stop();
+				}
+			}
+		}
+
+		private void AdminProductPage_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (camera != null)
+			{
+				if (camera.IsRunning)
+				{
+					camera.Stop();
+				}
+			}
 		}
 
 	}

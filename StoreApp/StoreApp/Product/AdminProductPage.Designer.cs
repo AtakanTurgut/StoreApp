@@ -54,10 +54,17 @@
 			this.grpDeleteProduct = new System.Windows.Forms.GroupBox();
 			this.lblSelectedId = new System.Windows.Forms.Label();
 			this.btnDeleteCategory = new System.Windows.Forms.Button();
+			this.btnMainPage = new System.Windows.Forms.Button();
+			this.btnStopCamera = new System.Windows.Forms.Button();
+			this.btnStartCamera = new System.Windows.Forms.Button();
+			this.txtBarcodeResult = new System.Windows.Forms.TextBox();
+			this.cmbCamera = new System.Windows.Forms.ComboBox();
+			this.pcbCamera = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
 			this.grpAddProduct.SuspendLayout();
 			this.grpUpdateProduct.SuspendLayout();
 			this.grpDeleteProduct.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pcbCamera)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dgvProduct
@@ -66,7 +73,7 @@
 			this.dgvProduct.Location = new System.Drawing.Point(277, 12);
 			this.dgvProduct.Name = "dgvProduct";
 			this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvProduct.Size = new System.Drawing.Size(562, 563);
+			this.dgvProduct.Size = new System.Drawing.Size(562, 535);
 			this.dgvProduct.TabIndex = 0;
 			this.dgvProduct.SelectionChanged += new System.EventHandler(this.dgvProduct_SelectionChanged);
 			// 
@@ -295,12 +302,72 @@
 			this.btnDeleteCategory.UseVisualStyleBackColor = false;
 			this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
 			// 
+			// btnMainPage
+			// 
+			this.btnMainPage.BackColor = System.Drawing.SystemColors.Control;
+			this.btnMainPage.Location = new System.Drawing.Point(277, 553);
+			this.btnMainPage.Name = "btnMainPage";
+			this.btnMainPage.Size = new System.Drawing.Size(562, 23);
+			this.btnMainPage.TabIndex = 4;
+			this.btnMainPage.Text = "Ana Sayfa";
+			this.btnMainPage.UseVisualStyleBackColor = false;
+			this.btnMainPage.Click += new System.EventHandler(this.btnMainPage_Click);
+			// 
+			// btnStopCamera
+			// 
+			this.btnStopCamera.Location = new System.Drawing.Point(1074, 517);
+			this.btnStopCamera.Name = "btnStopCamera";
+			this.btnStopCamera.Size = new System.Drawing.Size(191, 49);
+			this.btnStopCamera.TabIndex = 16;
+			this.btnStopCamera.Text = "Kamera Durdur";
+			this.btnStopCamera.UseVisualStyleBackColor = true;
+			this.btnStopCamera.Click += new System.EventHandler(this.btnStopCamera_Click);
+			// 
+			// btnStartCamera
+			// 
+			this.btnStartCamera.Location = new System.Drawing.Point(859, 517);
+			this.btnStartCamera.Name = "btnStartCamera";
+			this.btnStartCamera.Size = new System.Drawing.Size(209, 49);
+			this.btnStartCamera.TabIndex = 15;
+			this.btnStartCamera.Text = "Kamera Başlat";
+			this.btnStartCamera.UseVisualStyleBackColor = true;
+			this.btnStartCamera.Click += new System.EventHandler(this.btnStartCamera_Click);
+			// 
+			// txtBarcodeResult
+			// 
+			this.txtBarcodeResult.Location = new System.Drawing.Point(859, 490);
+			this.txtBarcodeResult.Name = "txtBarcodeResult";
+			this.txtBarcodeResult.Size = new System.Drawing.Size(406, 20);
+			this.txtBarcodeResult.TabIndex = 14;
+			// 
+			// cmbCamera
+			// 
+			this.cmbCamera.FormattingEnabled = true;
+			this.cmbCamera.Location = new System.Drawing.Point(859, 14);
+			this.cmbCamera.Name = "cmbCamera";
+			this.cmbCamera.Size = new System.Drawing.Size(406, 21);
+			this.cmbCamera.TabIndex = 13;
+			// 
+			// pcbCamera
+			// 
+			this.pcbCamera.Location = new System.Drawing.Point(859, 41);
+			this.pcbCamera.Name = "pcbCamera";
+			this.pcbCamera.Size = new System.Drawing.Size(406, 443);
+			this.pcbCamera.TabIndex = 12;
+			this.pcbCamera.TabStop = false;
+			// 
 			// AdminProductPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Gray;
-			this.ClientSize = new System.Drawing.Size(852, 588);
+			this.ClientSize = new System.Drawing.Size(1277, 588);
+			this.Controls.Add(this.btnStopCamera);
+			this.Controls.Add(this.btnStartCamera);
+			this.Controls.Add(this.txtBarcodeResult);
+			this.Controls.Add(this.cmbCamera);
+			this.Controls.Add(this.pcbCamera);
+			this.Controls.Add(this.btnMainPage);
 			this.Controls.Add(this.grpDeleteProduct);
 			this.Controls.Add(this.grpUpdateProduct);
 			this.Controls.Add(this.grpAddProduct);
@@ -309,6 +376,7 @@
 			this.Name = "AdminProductPage";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "AdminProductPage";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminProductPage_FormClosing);
 			this.Load += new System.EventHandler(this.AdminProductPage_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
 			this.grpAddProduct.ResumeLayout(false);
@@ -317,7 +385,9 @@
 			this.grpUpdateProduct.PerformLayout();
 			this.grpDeleteProduct.ResumeLayout(false);
 			this.grpDeleteProduct.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pcbCamera)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -348,5 +418,11 @@
 		private System.Windows.Forms.GroupBox grpDeleteProduct;
 		private System.Windows.Forms.Label lblSelectedId;
 		private System.Windows.Forms.Button btnDeleteCategory;
+		private System.Windows.Forms.Button btnMainPage;
+		private System.Windows.Forms.Button btnStopCamera;
+		private System.Windows.Forms.Button btnStartCamera;
+		private System.Windows.Forms.TextBox txtBarcodeResult;
+		private System.Windows.Forms.ComboBox cmbCamera;
+		private System.Windows.Forms.PictureBox pcbCamera;
 	}
 }

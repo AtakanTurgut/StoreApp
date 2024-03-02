@@ -78,11 +78,23 @@ namespace StoreApp.Category
 
 		private void dgvCategory_SelectionChanged(object sender, EventArgs e)
 		{
-			selectedId = dgvCategory.CurrentRow.Cells["CategoryId"].Value.ToString();
-			lblSelectedId.Text = selectedId;
+			if (dgvCategory.CurrentRow == null) { }
+			else
+			{
+				selectedId = dgvCategory.CurrentRow.Cells["CategoryId"].Value.ToString();
+				lblSelectedId.Text = selectedId;
 
-			selectedName = dgvCategory.CurrentRow.Cells["CategoryName"].Value.ToString();
-			txtUpdateCategoryName.Text = selectedName;
+				selectedName = dgvCategory.CurrentRow.Cells["CategoryName"].Value.ToString();
+				txtUpdateCategoryName.Text = selectedName;
+			}
+		}
+
+		private void btnMainPage_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+
+			StoreApp storeAppPage = new StoreApp();
+			storeAppPage.Show();
 		}
 
 	}

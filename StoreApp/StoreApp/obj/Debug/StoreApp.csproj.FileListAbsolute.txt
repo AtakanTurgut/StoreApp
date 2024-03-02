@@ -16,3 +16,13 @@ C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\obj\Debug\StoreApp.csproj.
 C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\obj\Debug\StoreApp.Category.AdminCategoryPage.resources
 C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\obj\Debug\StoreApp.StoreApp.resources
 C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\obj\Debug\StoreApp.Product.AdminProductPage.resources
+C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\bin\Debug\AForge.dll
+C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\bin\Debug\AForge.Video.dll
+C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\bin\Debug\zxing.dll
+C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\bin\Debug\zxing.presentation.dll
+C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\bin\Debug\AForge.xml
+C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\bin\Debug\AForge.Video.xml
+C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\bin\Debug\zxing.xml
+C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\bin\Debug\zxing.presentation.xml
