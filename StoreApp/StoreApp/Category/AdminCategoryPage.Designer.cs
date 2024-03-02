@@ -32,16 +32,16 @@
 			this.dgvCategory = new System.Windows.Forms.DataGridView();
 			this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
 			this.grpAddCategory = new System.Windows.Forms.GroupBox();
-			this.txtCategoryName = new System.Windows.Forms.TextBox();
-			this.lblCategoryName = new System.Windows.Forms.Label();
 			this.btnCategoryAdd = new System.Windows.Forms.Button();
+			this.lblCategoryName = new System.Windows.Forms.Label();
+			this.txtCategoryName = new System.Windows.Forms.TextBox();
 			this.grpUpdateCategory = new System.Windows.Forms.GroupBox();
 			this.btnUpdateCategory = new System.Windows.Forms.Button();
 			this.lblCategoryNameUpdate = new System.Windows.Forms.Label();
 			this.txtUpdateCategoryName = new System.Windows.Forms.TextBox();
 			this.grpDeleteCategory = new System.Windows.Forms.GroupBox();
-			this.btnDeleteCategory = new System.Windows.Forms.Button();
 			this.lblSelectedId = new System.Windows.Forms.Label();
+			this.btnDeleteCategory = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
 			this.grpAddCategory.SuspendLayout();
 			this.grpUpdateCategory.SuspendLayout();
@@ -77,22 +77,6 @@
 			this.grpAddCategory.TabStop = false;
 			this.grpAddCategory.Text = "Kategori Ekle";
 			// 
-			// txtCategoryName
-			// 
-			this.txtCategoryName.Location = new System.Drawing.Point(9, 32);
-			this.txtCategoryName.Name = "txtCategoryName";
-			this.txtCategoryName.Size = new System.Drawing.Size(229, 20);
-			this.txtCategoryName.TabIndex = 0;
-			// 
-			// lblCategoryName
-			// 
-			this.lblCategoryName.AutoSize = true;
-			this.lblCategoryName.Location = new System.Drawing.Point(6, 16);
-			this.lblCategoryName.Name = "lblCategoryName";
-			this.lblCategoryName.Size = new System.Drawing.Size(64, 13);
-			this.lblCategoryName.TabIndex = 1;
-			this.lblCategoryName.Text = "Kategori Adı";
-			// 
 			// btnCategoryAdd
 			// 
 			this.btnCategoryAdd.BackColor = System.Drawing.Color.YellowGreen;
@@ -103,6 +87,22 @@
 			this.btnCategoryAdd.Text = "Kategori Ekle";
 			this.btnCategoryAdd.UseVisualStyleBackColor = false;
 			this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
+			// 
+			// lblCategoryName
+			// 
+			this.lblCategoryName.AutoSize = true;
+			this.lblCategoryName.Location = new System.Drawing.Point(6, 16);
+			this.lblCategoryName.Name = "lblCategoryName";
+			this.lblCategoryName.Size = new System.Drawing.Size(64, 13);
+			this.lblCategoryName.TabIndex = 1;
+			this.lblCategoryName.Text = "Kategori Adı";
+			// 
+			// txtCategoryName
+			// 
+			this.txtCategoryName.Location = new System.Drawing.Point(9, 32);
+			this.txtCategoryName.Name = "txtCategoryName";
+			this.txtCategoryName.Size = new System.Drawing.Size(229, 20);
+			this.txtCategoryName.TabIndex = 0;
 			// 
 			// grpUpdateCategory
 			// 
@@ -154,6 +154,14 @@
 			this.grpDeleteCategory.TabStop = false;
 			this.grpDeleteCategory.Text = "Kategori Sil";
 			// 
+			// lblSelectedId
+			// 
+			this.lblSelectedId.AutoSize = true;
+			this.lblSelectedId.Location = new System.Drawing.Point(114, 21);
+			this.lblSelectedId.Name = "lblSelectedId";
+			this.lblSelectedId.Size = new System.Drawing.Size(0, 13);
+			this.lblSelectedId.TabIndex = 3;
+			// 
 			// btnDeleteCategory
 			// 
 			this.btnDeleteCategory.BackColor = System.Drawing.Color.Crimson;
@@ -164,14 +172,6 @@
 			this.btnDeleteCategory.Text = "Kategori Sil";
 			this.btnDeleteCategory.UseVisualStyleBackColor = false;
 			this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
-			// 
-			// lblSelectedId
-			// 
-			this.lblSelectedId.AutoSize = true;
-			this.lblSelectedId.Location = new System.Drawing.Point(114, 21);
-			this.lblSelectedId.Name = "lblSelectedId";
-			this.lblSelectedId.Size = new System.Drawing.Size(0, 13);
-			this.lblSelectedId.TabIndex = 3;
 			// 
 			// AdminCategoryPage
 			// 
@@ -186,6 +186,7 @@
 			this.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "AdminCategoryPage";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "AdminCategoryPage";
 			this.Load += new System.EventHandler(this.AdminCategoryPage_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();

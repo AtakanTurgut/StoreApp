@@ -1,4 +1,5 @@
 ﻿using StoreApp.Category;
+using StoreApp.Product;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,14 @@ namespace StoreApp
 
 			AdminCategoryPage categoryPage = new AdminCategoryPage();
 			categoryPage.Show();
+		}
+
+		private void btnProduct_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+
+			AdminProductPage productPage = new AdminProductPage();
+			productPage.Show();
 		}
 	}
 }

@@ -30,27 +30,22 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
 			this.btnCategory = new System.Windows.Forms.Button();
+			this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+			this.btnProduct = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(62)))));
+			this.panel1.Controls.Add(this.btnProduct);
 			this.panel1.Controls.Add(this.btnCategory);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(204, 450);
 			this.panel1.TabIndex = 0;
-			// 
-			// bunifuDragControl1
-			// 
-			this.bunifuDragControl1.Fixed = true;
-			this.bunifuDragControl1.Horizontal = true;
-			this.bunifuDragControl1.TargetControl = this;
-			this.bunifuDragControl1.Vertical = true;
 			// 
 			// btnCategory
 			// 
@@ -62,7 +57,24 @@
 			this.btnCategory.UseVisualStyleBackColor = true;
 			this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
 			// 
-			// Form1
+			// bunifuDragControl1
+			// 
+			this.bunifuDragControl1.Fixed = true;
+			this.bunifuDragControl1.Horizontal = true;
+			this.bunifuDragControl1.TargetControl = this;
+			this.bunifuDragControl1.Vertical = true;
+			// 
+			// btnProduct
+			// 
+			this.btnProduct.Location = new System.Drawing.Point(12, 63);
+			this.btnProduct.Name = "btnProduct";
+			this.btnProduct.Size = new System.Drawing.Size(178, 35);
+			this.btnProduct.TabIndex = 1;
+			this.btnProduct.Text = "Ürün İşlemleri";
+			this.btnProduct.UseVisualStyleBackColor = true;
+			this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
+			// 
+			// StoreApp
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -70,8 +82,9 @@
 			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.Controls.Add(this.panel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Name = "StoreApp";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Store App";
 			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
@@ -82,6 +95,7 @@
 		private System.Windows.Forms.Panel panel1;
 		private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
 		private System.Windows.Forms.Button btnCategory;
+		private System.Windows.Forms.Button btnProduct;
 	}
 }
 

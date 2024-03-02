@@ -15,3 +15,4 @@ C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\bin\Debug\Bunifu.UI.WinFor
 C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\obj\Debug\StoreApp.csproj.CopyComplete
 C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\obj\Debug\StoreApp.Category.AdminCategoryPage.resources
 C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\obj\Debug\StoreApp.StoreApp.resources
+C:\Users\Excalibur\Desktop\StoreApp\StoreApp\StoreApp\obj\Debug\StoreApp.Product.AdminProductPage.resources

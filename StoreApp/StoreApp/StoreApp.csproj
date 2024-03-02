@@ -63,6 +63,12 @@
       <DependentUpon>AdminCategoryPage.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\DataConnection.cs" />
+    <Compile Include="Product\AdminProductPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\AdminProductPage.Designer.cs">
+      <DependentUpon>AdminProductPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="StoreApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Category\AdminCategoryPage.resx">
       <DependentUpon>AdminCategoryPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\AdminProductPage.resx">
+      <DependentUpon>AdminProductPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StoreApp.resx">
       <DependentUpon>StoreApp.cs</DependentUpon>
